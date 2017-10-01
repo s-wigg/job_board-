@@ -1,0 +1,18 @@
+<h1>Edit Job</h1>
+
+<p>
+  <%= form_for @job do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br />
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br />
+
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+    <br />
+
+    <%= f.submit %>
+  <% end %>
+</p>
