@@ -41,5 +41,15 @@ class JobsController < ApplicationController
       else
         render :edit
       end
-    end
   end
+
+  def delete
+    job = Job.find(params[:id])
+
+    if job.destroy
+      redirect_to jobs_path
+    else
+    end 
+  end
+
+end
