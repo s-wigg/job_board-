@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:id])
+    @job = Job.find_by(params[:id])
   end
 
   def new
@@ -26,11 +26,11 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
+    @job = Job.find_by(params[:id])
   end
 
   def update
-    @job = Job.find(params[:id])
+    @job = Job.find_by(params[:id])
     result = @job.update({
       title: params[:job][:title],
       description: params[:job][:description],
@@ -44,12 +44,12 @@ class JobsController < ApplicationController
   end
 
   def delete
-    job = Job.find(params[:id])
+    job = Job.find_by(params[:id])
 
     if job.destroy
       redirect_to jobs_path
     else
-    end 
+    end
   end
 
 end
